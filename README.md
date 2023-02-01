@@ -4,12 +4,12 @@ A unity game in a facility
 ## SETUP
 To set up the development environment you have to follow these Steps:
 
-  - Download and Install the GitHub Desktop App
-  - Log In or Sign up into GitHub
-  - Go to File > Clone Repository > URL
-  - Go to the Repository and Click Code > Clone > Copy To Copy the URL
-  - Paste In The URl and select Where You Want the Repository to be Stored
-  - Go Into the Unity Hub and click 'Add' and select where you cloned the Repository
+  - Download and Install the GitHub Desktop App.
+  - Log In or Sign up into GitHub.
+  - Go to 'File > Clone Repository > URL'.
+  - Go back to the Repository and Click 'Code > Clone > Copy' To Copy the URL.
+  - Paste In The URL and select Where You Want the Repository to be Stored on your Computer.
+  - Go Into the Unity Hub and click 'Add' and select where you cloned the Repository.
 
 ## USING IT
 To use it do the following:
