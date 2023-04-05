@@ -57,8 +57,8 @@ Material:
     - _Cull: 2
     - _Depth_Fade: 4.89
     - _DstBlend: 10
-    - _Foam_Depth: 2.51
-    - _Foam_Noise_Scale: 4.5
+    - _Foam_Depth: 1.53
+    - _Foam_Noise_Scale: 3.39
     - _Foam_RIpple_Speed: 0.05
     - _QueueControl: 0
     - _QueueOffset: 0

@@ -14,6 +14,8 @@ public class Pickup : MonoBehaviour
     public LayerMask layerMask;
     public LineRenderer lineRenderer;
     public float speed;
+    public float maxDistanceToObject;
+    public PlayerMovement player;
 
     Rigidbody pickupRb;
     GameObject pickupObject;
@@ -45,7 +47,7 @@ public class Pickup : MonoBehaviour
         if(Input.GetMouseButtonDown(1) && 
             Physics.Raycast(transform.position, transform.forward, out hit, distance, layerMask) &&
             hit.rigidbody != null) {
-                PickUp(hit.rigidbody);
+                PickUp(hit);
             }
 
             // Dropping
@@ -61,6 +63,8 @@ public class Pickup : MonoBehaviour
     void Drop()
     {
             // Resetting all variables about the picked up object
+        holdingPoint.transform.localPosition = Vector3.zero;
+
         pickupObject = null;
         pickupRb = null;
 
@@ -71,11 +75,14 @@ public class Pickup : MonoBehaviour
         lineRenderer.positionCount = 0;
     }
 
-    void PickUp(Rigidbody hitRb)
+    void PickUp(RaycastHit hit)
     {
             // Setting the variables for the picked up Object
-        pickupObject = hitRb.gameObject;
-        pickupRb = hitRb;
+        pickupObject = hit.rigidbody.gameObject;
+        pickupRb = hit.rigidbody;
+
+            // Shooting the holding point forward to be on the level of the object
+        holdingPoint.transform.position = hit.point;
 
             // Enable Holding and the line renderer
         lineEnabled = true;
@@ -99,7 +106,8 @@ public class Pickup : MonoBehaviour
             // Seting the velocity of the picked up Object to the distance between the holding point and the object
         if(pickupRb != null)
         {
-            Vector3 distance = (holdingPoint.transform.position - pickupRb.transform.position) * speed;
+            Vector3 distance = (holdingPoint.transform.position - pickupRb.transform.position) * speed 
+                / pickupRb.mass;
             pickupRb.velocity = distance;
         }
     }
