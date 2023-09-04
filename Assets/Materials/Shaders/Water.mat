@@ -66,7 +66,7 @@ Material:
     - _ReceiveShadows: 1
     - _SrcBlend: 5
     - _Surface: 1
-    - _Water_Height: 0.54
+    - _Water_Height: 0.36
     - _Water_Noise_Scale: 2
     - _Water_Speed: 0.34
     - _WorkflowMode: 1

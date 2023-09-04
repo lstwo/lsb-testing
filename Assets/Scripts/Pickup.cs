@@ -16,6 +16,7 @@ public class Pickup : MonoBehaviour
     public float speed;
     public float maxDistanceToObject;
     public PlayerMovement player;
+    public float gravityModifier = 1;
 
     Rigidbody pickupRb;
     GameObject pickupObject;
@@ -46,9 +47,10 @@ public class Pickup : MonoBehaviour
         RaycastHit hit;
         if(Input.GetMouseButtonDown(1) && 
             Physics.Raycast(transform.position, transform.forward, out hit, distance, layerMask) &&
-            hit.rigidbody != null) {
-                PickUp(hit);
-            }
+            hit.rigidbody != null) 
+        {
+            PickUp(hit);
+        }
 
             // Dropping
         /*
@@ -108,7 +110,7 @@ public class Pickup : MonoBehaviour
         {
             Vector3 distance = (holdingPoint.transform.position - pickupRb.transform.position) * speed 
                 / pickupRb.mass;
-            pickupRb.velocity = distance;
+            pickupRb.velocity = distance + (pickupRb.mass * Physics.gravity) * gravityModifier;
         }
     }
 }

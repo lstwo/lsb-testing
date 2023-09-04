@@ -57,15 +57,15 @@ Material:
     - _Cull: 2
     - _Depth_Fade: 4.89
     - _DstBlend: 10
-    - _Foam_Depth: 1.53
-    - _Foam_Noise_Scale: 3.39
+    - _Foam_Depth: 0
+    - _Foam_Noise_Scale: 0
     - _Foam_RIpple_Speed: 0.05
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SrcBlend: 5
     - _Surface: 1
-    - _Water_Height: 0.44
+    - _Water_Height: 0.41
     - _Water_Noise_Scale: 2.35
     - _Water_Speed: -0.11
     - _WorkflowMode: 1
